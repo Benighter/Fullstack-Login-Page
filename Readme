@@ -1,0 +1,109 @@
+# Full-Stack Authentication App
+
+## Description
+
+This is a full-stack web application that demonstrates user authentication and protected routes. It allows users to register, login, and access a protected page. The application is built using the MERN stack (MongoDB, Express.js, React, and Node.js) and incorporates JWT (JSON Web Tokens) for authentication.
+
+Key features:
+- User registration with username and email validation
+- Secure login system
+- Protected routes accessible only to authenticated users
+- Custom middleware for inappropriate word filtering
+- JWT-based authentication
+
+## Table of Contents
+
+1. [Technologies Used](#technologies-used)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [API Endpoints](#api-endpoints)
+5. [Frontend Routes](#frontend-routes)
+6. [Security Features](#security-features)
+7. [Contributing](#contributing)
+8. [License](#license)
+
+## Technologies Used
+
+- **Frontend**: React.js, React Router, Axios
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: JSON Web Tokens (JWT)
+- **Password Hashing**: bcrypt.js
+- **API Testing**: Postman (recommended)
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/full-stack-auth-app.git
+   cd full-stack-auth-app
+   ```
+
+2. Install server dependencies:
+   ```
+   cd server
+   npm install
+   ```
+
+3. Install client dependencies:
+   ```
+   cd ../client
+   npm install
+   ```
+
+4. Set up environment variables:
+   - In the `server` directory, create a `.env` file with the following contents:
+     ```
+     MONGODB_URI=your_mongodb_connection_string
+     JWT_SECRET=your_jwt_secret
+     PORT=5000
+     ```
+   - Replace `your_mongodb_connection_string` with your actual MongoDB connection string.
+   - Replace `your_jwt_secret` with a secure random string for JWT signing.
+
+## Usage
+
+1. Start the backend server:
+   ```
+   cd server
+   npm start
+   ```
+   The server will run on `http://localhost:5000`
+
+2. In a new terminal, start the React frontend:
+   ```
+   cd client
+   npm start
+   ```
+   The React app will run on `http://localhost:3000`
+
+3. Open your browser and navigate to `http://localhost:3000` to use the application.
+
+## API Endpoints
+
+- `POST /register`: Register a new user
+- `POST /login`: Authenticate a user and receive a JWT
+- `GET /protected`: Access protected content (requires authentication)
+
+## Frontend Routes
+
+- `/`: Redirects to login page
+- `/login`: User login page
+- `/register`: User registration page
+- `/protected`: Protected content page (requires authentication)
+
+## Security Features
+
+1. **Password Hashing**: User passwords are hashed using bcrypt before storage.
+2. **JWT Authentication**: JSON Web Tokens are used for maintaining user sessions.
+3. **Protected Routes**: Certain routes require valid JWT for access.
+4. **Input Validation**: Server-side validation for user inputs.
+5. **Inappropriate Content Filter**: Custom middleware to filter out inappropriate words in usernames and emails.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
